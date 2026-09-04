@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tres amenazas digitales comunes y cómo reconocerlas.">
+    <title>Amenazas — Seguridad digital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <a class="salto-contenido" href="#contenido">Saltar al contenido</a>
+
+    <header class="cabecera">
+        <div class="contenedor cabecera-interna">
+            <a class="marca" href="index.html">Seguridad digital</a>
+            <nav aria-label="Navegación principal">
+                <ul class="menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="amenazas.html" aria-current="page">Amenazas</a></li>
+                    <li><a href="consejos.html">Consejos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="contenido">
+
+        <section class="contenedor encabezado-pagina">
+            <h1>Tres amenazas que verás esta semana</h1>
+            <p class="entradilla">
+                Ninguna requiere que el atacante sea sofisticado. Funcionan porque
+                aprovechan hábitos, no fallas técnicas.
+            </p>
+        </section>
+
+        <section class="contenedor seccion">
+            <div class="rejilla-amenazas">
+
+                <article class="amenaza">
+                    <p class="amenaza-tipo">Ingeniería social</p>
+                    <h2>Phishing</h2>
+                    <p>
+                        Un mensaje que imita a una entidad real (el banco, la universidad,
+                        una plataforma) y te pide entrar a un enlace y escribir tus datos.
+                        El sitio es una copia. Lo que escribes queda del otro lado.
+                    </p>
+                    <h3>Cómo reconocerlo</h3>
+                    <ul class="lista">
+                        <li>Urgencia artificial: "tu cuenta será bloqueada hoy".</li>
+                        <li>El dominio no coincide con el oficial, aunque se le parezca.</li>
+                        <li>Pide credenciales por un enlace en vez de que entres tú.</li>
+                    </ul>
+                </article>
+
+                <article class="amenaza">
+                    <p class="amenaza-tipo">Credenciales</p>
+                    <h2>Contraseñas reutilizadas</h2>
+                    <p>
+                        Cuando una plataforma sufre una filtración, esas combinaciones de
+                        correo y contraseña se prueban automáticamente en decenas de servicios.
+                        Si repites la misma clave, una filtración ajena se convierte en tu problema.
+                    </p>
+                    <h3>Cómo protegerte</h3>
+                    <ul class="lista">
+                        <li>Una contraseña distinta por servicio, guardada en un gestor.</li>
+                        <li>Activa la verificación en dos pasos donde se pueda.</li>
+                        <li>Prioriza la longitud sobre los símbolos raros.</li>
+                    </ul>
+                </article>
+
+                <article class="amenaza">
+                    <p class="amenaza-tipo">Redes</p>
+                    <h2>Wifi público abierto</h2>
+                    <p>
+                        En una red sin contraseña, cualquiera conectado puede observar el
+                        tráfico que no vaya cifrado. También es fácil montar un punto de
+                        acceso falso con el nombre del lugar.
+                    </p>
+                    <h3>Cómo protegerte</h3>
+                    <ul class="lista">
+                        <li>Verifica que los sitios usen HTTPS antes de escribir datos.</li>
+                        <li>Evita banca y trámites sensibles en redes abiertas.</li>
+                        <li>Usa los datos móviles si la operación es delicada.</li>
+                    </ul>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="contenedor seccion">
+            <h2>Comparación rápida</h2>
+
+            <table class="tabla">
+                <caption>Nivel de riesgo y esfuerzo de mitigación</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Amenaza</th>
+                        <th scope="col">Qué busca</th>
+                        <th scope="col">Riesgo</th>
+                        <th scope="col">Esfuerzo de protección</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Phishing</th>
+                        <td>Tus credenciales</td>
+                        <td>Alto</td>
+                        <td>Bajo — atención al remitente</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Contraseñas reutilizadas</th>
+                        <td>Acceso a varias cuentas</td>
+                        <td>Alto</td>
+                        <td>Medio — usar un gestor</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Wifi abierto</th>
+                        <td>Tráfico sin cifrar</td>
+                        <td>Medio</td>
+                        <td>Bajo — verificar HTTPS</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <footer class="pie">
+        <div class="contenedor">
+            <p>Juan Manuel Moreno Muñoz · Desarrollo de Aplicaciones Web · 2026</p>
+        </div>
+    </footer>
+
+</body>
+</html>
