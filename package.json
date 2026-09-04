@@ -1,24 +1,17 @@
 {
   "name": "desarrolloweb",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Ejercicios de TypeScript - Desarrollo de Aplicaciones Web",
+  "main": "dist/ejercicios.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Juan-Manuel3132007/desarrolloweb.git"
+    "build": "tsc",
+    "start": "node dist/ejercicios.js",
+    "dev": "tsc && node dist/ejercicios.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Juan Manuel Moreno Munoz",
   "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/Juan-Manuel3132007/desarrolloweb/issues"
-  },
-  "homepage": "https://github.com/Juan-Manuel3132007/desarrolloweb#readme",
   "devDependencies": {
-    "typescript": "^7.0.2"
+    "typescript": "^5.9.2"
   }
 }
