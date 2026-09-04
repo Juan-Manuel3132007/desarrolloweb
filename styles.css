@@ -1,0 +1,261 @@
+/* ============================================
+   Hoja de vida — Juan Manuel Moreno Muñoz
+   ============================================ */
+
+/* --- Tokens --- */
+:root {
+    --fondo:        #E9EBE8;
+    --hoja:         #FFFFFF;
+    --tinta:        #14181C;
+    --tinta-suave:  #5C656E;
+    --acento:       #0E6B5B;
+    --acento-claro: #DCEAE6;
+    --linea:        #DDE1DE;
+
+    --tipo: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+    --espacio-s:  0.5rem;
+    --espacio-m:  1.25rem;
+    --espacio-l:  2.5rem;
+    --espacio-xl: 4rem;
+}
+
+/* --- Reset básico --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    background-color: var(--fondo);
+    color: var(--tinta);
+    font-family: var(--tipo);
+    font-size: 1rem;
+    line-height: 1.65;
+    padding: var(--espacio-l) var(--espacio-m);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* --- La hoja --- */
+.hoja {
+    max-width: 54rem;
+    margin: 0 auto;
+    background-color: var(--hoja);
+    border-top: 6px solid var(--acento);
+    box-shadow: 0 1px 2px rgba(20, 24, 28, 0.06),
+                0 12px 32px rgba(20, 24, 28, 0.08);
+    padding: var(--espacio-xl) var(--espacio-l) var(--espacio-l);
+}
+
+/* --- Encabezado con foto --- */
+.encabezado {
+    display: grid;
+    grid-template-columns: 11rem 1fr;
+    gap: var(--espacio-l);
+    align-items: center;
+    padding-bottom: var(--espacio-l);
+}
+
+.foto {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center 20%;
+    border-radius: 3px;
+    border-bottom: 4px solid var(--acento);
+    outline: 1px solid var(--linea);
+    background-color: var(--acento-claro);
+}
+
+.nombre {
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+}
+
+.rol {
+    margin-top: var(--espacio-m);
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--acento);
+}
+
+.lugar {
+    color: var(--tinta-suave);
+    font-size: 0.95rem;
+}
+
+/* --- Secciones: título en la columna izquierda --- */
+.bloque {
+    display: grid;
+    grid-template-columns: 11rem 1fr;
+    gap: var(--espacio-l);
+    padding: var(--espacio-l) 0;
+    border-top: 1px solid var(--linea);
+}
+
+.bloque h2 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--tinta-suave);
+    letter-spacing: 0.01em;
+    padding-top: 0.2rem;
+}
+
+.contenido > * + * {
+    margin-top: var(--espacio-m);
+}
+
+.entrada {
+    color: var(--tinta-suave);
+    max-width: 60ch;
+}
+
+/* --- Listas con marcador propio --- */
+.lista {
+    list-style: none;
+}
+
+.lista li {
+    position: relative;
+    padding-left: 1.5rem;
+    max-width: 60ch;
+}
+
+.lista li + li {
+    margin-top: var(--espacio-s);
+}
+
+.lista li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 0.6rem;
+    height: 2px;
+    background-color: var(--acento);
+}
+
+/* --- Datos de contacto --- */
+.datos {
+    display: grid;
+    grid-template-columns: 6rem 1fr;
+    gap: var(--espacio-s) var(--espacio-m);
+    align-items: baseline;
+}
+
+.datos dt {
+    font-weight: 600;
+    color: var(--tinta-suave);
+    font-size: 0.9rem;
+}
+
+.datos dd {
+    word-break: break-word;
+}
+
+/* --- Enlaces --- */
+a {
+    color: var(--acento);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    border-radius: 2px;
+}
+
+a:hover {
+    background-color: var(--acento-claro);
+    text-decoration-thickness: 2px;
+}
+
+a:focus-visible {
+    outline: 2px solid var(--acento);
+    outline-offset: 3px;
+}
+
+.lista-enlaces li::before {
+    top: 0.75em;
+}
+
+/* --- Pie --- */
+.pie {
+    border-top: 1px solid var(--linea);
+    padding-top: var(--espacio-m);
+    color: var(--tinta-suave);
+    font-size: 0.8rem;
+}
+
+/* --- Responsive: una sola columna en móvil --- */
+@media (max-width: 46rem) {
+    body {
+        padding: 0;
+    }
+
+    .hoja {
+        padding: var(--espacio-l) var(--espacio-m) var(--espacio-m);
+        box-shadow: none;
+    }
+
+    .encabezado {
+        grid-template-columns: 1fr;
+        gap: var(--espacio-m);
+        justify-items: start;
+    }
+
+    .foto {
+        width: 8rem;
+    }
+
+    .bloque {
+        grid-template-columns: 1fr;
+        gap: var(--espacio-m);
+        padding: var(--espacio-m) 0;
+    }
+
+    .datos {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .datos dd + dt {
+        margin-top: var(--espacio-s);
+    }
+}
+
+/* --- Impresión --- */
+@media print {
+    body {
+        background: #FFF;
+        padding: 0;
+        font-size: 11pt;
+    }
+
+    .hoja {
+        max-width: none;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .bloque {
+        break-inside: avoid;
+    }
+
+    a {
+        color: var(--tinta);
+        text-decoration: none;
+    }
+}
