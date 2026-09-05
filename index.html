@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cuatro ejercicios de manipulación del DOM con JavaScript.">
+    <title>Ejercicios de DOM — JavaScript</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/ejercicios.js" defer></script>
+</head>
+<body>
+
+    <header class="cabecera">
+        <div class="contenedor">
+            <p class="contexto">Universidad de Medellín · Desarrollo de Aplicaciones Web</p>
+            <h1>Ejercicios de manipulación del DOM</h1>
+            <p class="entradilla">
+                Cuatro ejercicios con JavaScript puro: selección de elementos, eventos,
+                creación dinámica de nodos y control de estado en memoria.
+            </p>
+        </div>
+    </header>
+
+    <main class="contenedor">
+
+        <!-- ================================================
+             Ejercicio 1 — Cambiar el color de fondo
+             ================================================ -->
+        <section class="ejercicio" id="ejercicio-1">
+            <p class="numero">Ejercicio 1</p>
+            <h2>Cambiar el color de fondo</h2>
+            <p class="descripcion">
+                Cada clic aplica un color distinto al fondo de la página, recorriendo
+                una paleta definida en un arreglo.
+            </p>
+
+            <div class="panel">
+                <button class="boton" type="button" id="btn-color">Cambiar color</button>
+                <button class="boton boton-secundario" type="button" id="btn-restaurar">Restaurar</button>
+                <p class="salida" id="salida-color">Color actual: por defecto</p>
+            </div>
+        </section>
+
+        <!-- ================================================
+             Ejercicio 2 — Lista dinámica
+             ================================================ -->
+        <section class="ejercicio" id="ejercicio-2">
+            <p class="numero">Ejercicio 2</p>
+            <h2>Lista dinámica</h2>
+            <p class="descripcion">
+                Los elementos se guardan en un arreglo en memoria y la lista se
+                vuelve a dibujar en cada cambio. El botón de cada fila usa delegación
+                de eventos.
+            </p>
+
+            <div class="panel">
+                <div class="fila-entrada">
+                    <label class="etiqueta-oculta" for="entrada-tarea">Nuevo elemento</label>
+                    <input class="campo" type="text" id="entrada-tarea"
+                           placeholder="Escribe un elemento y presiona Agregar">
+                    <button class="boton" type="button" id="btn-agregar">Agregar</button>
+                </div>
+
+                <p class="aviso" id="aviso-lista" role="status" aria-live="polite"></p>
+
+                <ul class="lista-dinamica" id="lista"></ul>
+
+                <p class="salida" id="contador-lista">0 elementos</p>
+            </div>
+        </section>
+
+        <!-- ================================================
+             Ejercicio 3 — Contador con límite
+             ================================================ -->
+        <section class="ejercicio" id="ejercicio-3">
+            <p class="numero">Ejercicio 3</p>
+            <h2>Contador con límite</h2>
+            <p class="descripcion">
+                Suma y resta de uno en uno. Al llegar a 10 muestra una alerta y
+                bloquea el botón de incremento.
+            </p>
+
+            <div class="panel">
+                <div class="contador">
+                    <button class="boton-redondo" type="button" id="btn-restar"
+                            aria-label="Restar uno">−</button>
+                    <output class="marcador" id="marcador">0</output>
+                    <button class="boton-redondo" type="button" id="btn-sumar"
+                            aria-label="Sumar uno">+</button>
+                </div>
+
+                <p class="salida" id="mensaje-contador" role="status" aria-live="polite">
+                    Límite: 10
+                </p>
+
+                <button class="boton boton-secundario" type="button" id="btn-reiniciar">
+                    Reiniciar
+                </button>
+            </div>
+        </section>
+
+        <!-- ================================================
+             Ejercicio 4 — Calculadora (sin eval)
+             ================================================ -->
+        <section class="ejercicio" id="ejercicio-4">
+            <p class="numero">Ejercicio 4</p>
+            <h2>Calculadora</h2>
+            <p class="descripcion">
+                Operaciones resueltas con operadores matemáticos propios, sin usar
+                <code>eval</code>. Los botones se manejan con un solo listener sobre
+                el teclado completo.
+            </p>
+
+            <div class="panel">
+                <div class="calculadora">
+                    <output class="pantalla" id="pantalla">0</output>
+
+                    <div class="teclado" id="teclado">
+                        <button class="tecla tecla-funcion" type="button" data-accion="limpiar">C</button>
+                        <button class="tecla tecla-funcion" type="button" data-accion="signo">±</button>
+                        <button class="tecla tecla-funcion" type="button" data-accion="porcentaje">%</button>
+                        <button class="tecla tecla-operador" type="button" data-operador="/">÷</button>
+
+                        <button class="tecla" type="button" data-digito="7">7</button>
+                        <button class="tecla" type="button" data-digito="8">8</button>
+                        <button class="tecla" type="button" data-digito="9">9</button>
+                        <button class="tecla tecla-operador" type="button" data-operador="*">×</button>
+
+                        <button class="tecla" type="button" data-digito="4">4</button>
+                        <button class="tecla" type="button" data-digito="5">5</button>
+                        <button class="tecla" type="button" data-digito="6">6</button>
+                        <button class="tecla tecla-operador" type="button" data-operador="-">−</button>
+
+                        <button class="tecla" type="button" data-digito="1">1</button>
+                        <button class="tecla" type="button" data-digito="2">2</button>
+                        <button class="tecla" type="button" data-digito="3">3</button>
+                        <button class="tecla tecla-operador" type="button" data-operador="+">+</button>
+
+                        <button class="tecla tecla-ancha" type="button" data-digito="0">0</button>
+                        <button class="tecla" type="button" data-accion="decimal">.</button>
+                        <button class="tecla tecla-igual" type="button" data-accion="igual">=</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="pie">
+        <div class="contenedor">
+            <p>Juan Manuel Moreno Muñoz · Desarrollo de Aplicaciones Web · 2026</p>
+        </div>
+    </footer>
+
+</body>
+</html>

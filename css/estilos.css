@@ -1,0 +1,394 @@
+/* ============================================================
+   Ejercicios de DOM — hoja de estilos
+   Juan Manuel Moreno Muñoz
+   ============================================================ */
+
+:root {
+    --papel:       #EDF0F3;
+    --superficie:  #FFFFFF;
+    --tinta:       #17293F;
+    --tinta-suave: #55677E;
+    --acento:      #2F5FD0;
+    --acento-alt:  #B07D12;
+    --linea:       #D6DDE4;
+    --alerta:      #B3341E;
+
+    --tipo: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --mono: "Consolas", "SF Mono", monospace;
+
+    --s1: 0.5rem;
+    --s2: 1rem;
+    --s3: 1.75rem;
+    --s4: 3rem;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--papel);
+    color: var(--tinta);
+    font-family: var(--tipo);
+    line-height: 1.65;
+    transition: background-color 0.4s ease;
+}
+
+.contenedor {
+    max-width: 56rem;
+    margin: 0 auto;
+    padding: 0 var(--s3);
+}
+
+/* --- Cabecera --- */
+.cabecera {
+    background-color: var(--superficie);
+    border-bottom: 1px solid var(--linea);
+    padding: var(--s4) 0;
+    margin-bottom: var(--s4);
+}
+
+.contexto {
+    color: var(--tinta-suave);
+    font-size: 0.85rem;
+    margin-bottom: var(--s1);
+}
+
+.cabecera h1 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+}
+
+.entradilla {
+    margin-top: var(--s2);
+    max-width: 55ch;
+    color: var(--tinta-suave);
+}
+
+/* --- Bloques de ejercicio --- */
+.ejercicio {
+    margin-bottom: var(--s4);
+}
+
+.numero {
+    color: var(--acento);
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: var(--s1);
+}
+
+.ejercicio h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.descripcion {
+    margin-top: var(--s1);
+    margin-bottom: var(--s2);
+    max-width: 60ch;
+    color: var(--tinta-suave);
+}
+
+.descripcion code {
+    font-family: var(--mono);
+    font-size: 0.9em;
+    background-color: var(--papel);
+    padding: 0.1em 0.35em;
+    border-radius: 3px;
+}
+
+.panel {
+    background-color: var(--superficie);
+    border: 1px solid var(--linea);
+    border-left: 4px solid var(--acento);
+    padding: var(--s3);
+}
+
+/* --- Botones --- */
+.boton {
+    font-family: var(--tipo);
+    font-size: 0.95rem;
+    font-weight: 600;
+    background-color: var(--tinta);
+    color: #FFF;
+    border: none;
+    border-radius: 3px;
+    padding: 0.65rem 1.3rem;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: var(--acento);
+}
+
+.boton-secundario {
+    background-color: transparent;
+    color: var(--tinta-suave);
+    border: 1px solid var(--linea);
+}
+
+.boton-secundario:hover {
+    background-color: var(--papel);
+    color: var(--tinta);
+}
+
+button:focus-visible {
+    outline: 3px solid var(--acento);
+    outline-offset: 2px;
+}
+
+button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.salida {
+    margin-top: var(--s2);
+    font-size: 0.9rem;
+    color: var(--tinta-suave);
+}
+
+/* --- Ejercicio 2: lista dinámica --- */
+.fila-entrada {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s1);
+}
+
+.etiqueta-oculta {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+.campo {
+    flex: 1;
+    min-width: 12rem;
+    font-family: var(--tipo);
+    font-size: 1rem;
+    padding: 0.65rem 0.85rem;
+    border: 2px solid var(--linea);
+    border-radius: 3px;
+    background-color: var(--papel);
+    color: var(--tinta);
+}
+
+.campo:focus {
+    outline: none;
+    border-color: var(--acento);
+    background-color: var(--superficie);
+}
+
+.aviso {
+    margin-top: var(--s1);
+    font-size: 0.85rem;
+    color: var(--alerta);
+    min-height: 1.4em;
+}
+
+.lista-dinamica {
+    list-style: none;
+    margin-top: var(--s2);
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s2);
+    padding: 0.6rem 0.85rem;
+    background-color: var(--papel);
+    border-left: 3px solid var(--acento-alt);
+}
+
+.item + .item {
+    margin-top: var(--s1);
+}
+
+.item-texto {
+    word-break: break-word;
+}
+
+.btn-eliminar {
+    font-family: var(--tipo);
+    font-size: 0.8rem;
+    font-weight: 600;
+    background-color: transparent;
+    color: var(--alerta);
+    border: 1px solid var(--linea);
+    border-radius: 3px;
+    padding: 0.3rem 0.7rem;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.btn-eliminar:hover {
+    background-color: var(--alerta);
+    color: #FFF;
+}
+
+.vacio {
+    color: var(--tinta-suave);
+    font-style: italic;
+    padding: var(--s2) 0;
+}
+
+/* --- Ejercicio 3: contador --- */
+.contador {
+    display: flex;
+    align-items: center;
+    gap: var(--s3);
+}
+
+.boton-redondo {
+    font-family: var(--tipo);
+    font-size: 1.5rem;
+    font-weight: 600;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 2px solid var(--linea);
+    background-color: var(--superficie);
+    color: var(--tinta);
+    cursor: pointer;
+    line-height: 1;
+}
+
+.boton-redondo:hover:not(:disabled) {
+    border-color: var(--acento);
+    color: var(--acento);
+}
+
+.marcador {
+    font-size: 3rem;
+    font-weight: 800;
+    min-width: 4rem;
+    text-align: center;
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+.marcador.limite {
+    color: var(--alerta);
+}
+
+#btn-reiniciar {
+    margin-top: var(--s2);
+}
+
+/* --- Ejercicio 4: calculadora --- */
+.calculadora {
+    max-width: 20rem;
+}
+
+.pantalla {
+    display: block;
+    background-color: var(--tinta);
+    color: #FFF;
+    font-family: var(--mono);
+    font-size: 2rem;
+    text-align: right;
+    padding: var(--s2);
+    border-radius: 3px 3px 0 0;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.teclado {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background-color: var(--linea);
+    border: 1px solid var(--linea);
+    border-top: none;
+}
+
+.tecla {
+    font-family: var(--tipo);
+    font-size: 1.1rem;
+    font-weight: 600;
+    background-color: var(--superficie);
+    color: var(--tinta);
+    border: none;
+    padding: 1rem 0;
+    cursor: pointer;
+}
+
+.tecla:hover {
+    background-color: var(--papel);
+}
+
+.tecla:active {
+    background-color: var(--linea);
+}
+
+.tecla-funcion {
+    color: var(--tinta-suave);
+}
+
+.tecla-operador {
+    background-color: #F4F6F8;
+    color: var(--acento);
+}
+
+.tecla-operador.activo {
+    background-color: var(--acento);
+    color: #FFF;
+}
+
+.tecla-igual {
+    background-color: var(--acento);
+    color: #FFF;
+}
+
+.tecla-igual:hover {
+    background-color: var(--tinta);
+}
+
+.tecla-ancha {
+    grid-column: span 2;
+}
+
+/* --- Pie --- */
+.pie {
+    background-color: var(--tinta);
+    color: #C3CDD9;
+    font-size: 0.85rem;
+    padding: var(--s3) 0;
+    margin-top: var(--s4);
+}
+
+/* --- Responsive --- */
+@media (max-width: 40rem) {
+    .contenedor {
+        padding: 0 var(--s2);
+    }
+
+    .panel {
+        padding: var(--s2);
+    }
+
+    .marcador {
+        font-size: 2.2rem;
+    }
+
+    .contador {
+        gap: var(--s2);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body {
+        transition: none;
+    }
+}
